@@ -134,9 +134,13 @@ class BinarySearchTree {
         console.log('no LEFT child')
         return root.right
       } else {
-        console.log('HAS LEFT & RIGHT child')
-        root.value = this.min(root.right);
-        root.right = this.removeNote(root.right, root.value)
+        console.log('HAS LEFT & RIGHT child for NODE = ', root)
+        root.data = this.findMin(root.right); 
+        console.log('min = ', root.data)
+        root.right = this.removeNote(root.right, root.data)
+        console.log(' NEW right value', root.right)
+        console.log('NEW ROOT', root)
+
       }
     }
     return root
